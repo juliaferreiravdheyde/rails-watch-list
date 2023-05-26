@@ -1,12 +1,26 @@
-<ul>
-<% @bookmarks.each do |bookmark| %>
-<li>
-<p>
-<%= bookmark.movie[:title] %>
-</p>
-<%= link_to 'remove', lists_path %>
-</li>
-<% end %>
-</ul>
-<%= link_to "New movie", new_list_bookmark_path(@list) %>
-<%= link_to "Back to List", lists_path%>
+<div class="container">
+
+  <div class="cards mt-5">
+    <ul>
+    <% @bookmarks.each do |bookmark| %>
+    <li>
+    <p>
+    <%= bookmark.movie[:title] %>
+    </p>
+    <%= link_to lists_path(@list), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+       <i class="fa-solid fa-trash remove"></i>
+        <% end %>
+    </li>
+    <% end %>
+    </ul>
+     </div>
+
+    <div class: 'btn btn-primary'>
+      <%= link_to "New movie", new_list_bookmark_path(@list) %>
+    </div>
+
+    <div class: 'btn btn-primary'>
+      <%= link_to "Back to List", lists_path%>
+    </div>
+
+</div>
