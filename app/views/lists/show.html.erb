@@ -1,0 +1,12 @@
+<ul>
+<% @bookmarks.each do |bookmark| %>
+<li>
+<p>
+<%= bookmark.movie[:title] %>
+</p>
+<%= link_to 'remove', lists_path %>
+</li>
+<% end %>
+</ul>
+<%= link_to "New movie", new_list_bookmark_path(@list) %>
+<%= link_to "Back to List", lists_path%>

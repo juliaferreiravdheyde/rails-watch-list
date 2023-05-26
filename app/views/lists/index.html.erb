@@ -1,0 +1,9 @@
+<h1>Movies</h1>
+
+<% @lists.each do |list| %>
+      <div class="col-6">
+        <%= link_to list.name, list_path(list), class: "btn btn-outline-secondary w-100 mt-3"%>
+      </div>
+    <% end %>
+
+<%= link_to "New List", new_list_path %>
