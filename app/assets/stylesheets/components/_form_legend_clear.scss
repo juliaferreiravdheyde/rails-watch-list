@@ -8,3 +8,11 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.search-form {
+  display: flex;
+}
+
+.search-input {
+  flex: 1;
+}
